@@ -1,0 +1,378 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    --color1: #FFF;
+    --color2: #181818;
+}
+
+
+.nav-bar {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    position: relative;
+    background-color: var(--color2);
+    padding: 12px 20px;
+}
+
+.logo img {
+    height: 50px;
+}
+
+.cart img {
+    height: 40px;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu li {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.menu li a {
+    display: block;
+    text-decoration: none;
+    color: var(--color1);
+    text-align: center;
+    padding: 10px 0;
+}
+
+.open-menu, .close-menu {
+    position: absolute;
+    color: var(--color1);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: none;
+}
+
+.open-menu {
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+.close-menu {
+    top: 20px;
+    right: 20px;
+}
+
+#check {
+    display: none;
+}
+
+@media(max-width: 700px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--color2);
+    }
+
+    .menu li {
+        margin-top: 30px;
+    }
+
+    .menu li a {
+        padding: 10px;
+    }
+
+    .open-menu, .close-menu {
+        display: block;
+    }
+
+    #check:checked ~ .menu {
+        right: 0;
+    }
+}
+
+/* Dropdown styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333; /* Maak de achtergrond donkerder */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: 60px;
+    padding: 10px 0; /* Extra padding zodat de gebruiker meer ruimte heeft */
+}
+
+.dropdown-content a {
+    color: white; /* Maak de tekst wit voor betere zichtbaarheid */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #575757; /* Voeg een lichte hover-achtergrond toe */
+}
+
+/* Toon het tweede niveau dropdown bij hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Submenu (derde niveau) styling */
+.dropdown-item {
+    position: relative;
+}
+
+.dropdown-item:hover .submenu-content {
+    display: block;
+}
+
+.submenu-content {
+    display: none;
+    position: absolute;
+    left: 100%; /* Plaats submenu rechts van het tweede niveau */
+    top: 0;
+    min-width: 160px;
+    background-color: #333; /* Zelfde achtergrondkleur als het tweede niveau */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.submenu-content a {
+    color: white; /* Maak de tekst wit voor de submenu's */
+}
+
+.submenu-content a:hover {
+    background-color: #575757; /* Voeg ook hier een lichte hover-achtergrond toe */
+}
+
+/* Einde navbar css */
+/* Cover sectie styling */
+.cover {
+    position: relative;
+    height: 100vh;
+}
+
+.cover-img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.cover-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.cover h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    background-color: #05899b; /* Knopkleur */
+    color: white;
+    padding: 15px 15px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #076673;
+}
+
+/* Ons aanbod gedeelte van index*/
+
+/* Sectie titel styling */
+.title {
+    text-align: center;
+    margin: 50px 0 20px 0;
+    font-size: 2.5rem;
+}
+
+/* Product cards layout */
+.product-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+/* Individuele card styling */
+.card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.card h2 {
+    margin: 15px 0;
+    font-size: 1.5rem;
+}
+
+/* Footer van de card met prijs en koopknop */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Koop knop styling */
+.card-footer .btn {
+    background-color: #05899b;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.card-footer .btn:hover {
+    background-color: #076673;
+}
+
+
+/* Contact pagina css */
+
+.contact-section {
+    margin-top: 20px; /* Zorgt dat de content niet onder de navbar valt */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contact-section p {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Contact formulier styling */
+/* Contact formulier styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the form horizontally */
+    margin: 20px auto; /* Margin auto ensures form is centered */
+    width: 100%;
+    max-width: 400px; /* Control the maximum width of the form */
+}
+
+.form-group {
+    width: 500px;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+    color: #333;
+    text-align: left; /* Left-align the label */
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%; /* Ensure the input and textarea fields take up 100% of the form-group's width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Prevent padding from increasing the width */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #05899b;
+    outline: none;
+}
+
+.submit-btn {
+    padding: 12px 20px;
+    background-color: #05899b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 500px; /* Make the submit button fill the width */
+    margin-top: 10px;
+}
+
+
+
+.submit-btn:hover {
+    background-color: #076673;
+}
+
+/* Over ons pagina */
+
+.about-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.about-section,
+.mission-section,
+.what-we-do-section,
+.team-section {
+    max-width: 800px; /* Zorg ervoor dat de secties niet te breed zijn */
+    margin-bottom: 40px; /* Ruimte tussen de secties */
+}
+
+.team-image {
+    width: 100%;
+    height: auto; /* Zorgt ervoor dat de afbeelding proportioneel blijft */
+    margin-top: 20px; /* Ruimte boven de afbeelding */
+}

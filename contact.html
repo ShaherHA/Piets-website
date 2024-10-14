@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piets Fiets | Contact</title>
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class='nav-bar'>
+                <li class='logo'><a href='index.html'><img src='IMG/logo.png' alt='logo'/></a></li>
+                <input type='checkbox' id='check' />
+                <span class="menu">
+                    <!-- Dropdown menu toegevoegd -->
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Ons Aanbod ↓</a>
+                        <div class="dropdown-content">
+                            <div class="dropdown-item">
+                                <a href="#">Link 1 →</a>
+                                <div class="submenu-content">
+                                    <a href="#">Link A</a>
+                                    <a href="#">Link B</a>
+                                    <a href="#">Link C</a>
+                                </div>
+                            </div>
+                            <a href="#">Link 2</a>
+                            <a href="#">Link 3</a>
+                        </div>
+                    </li>
+                    <li><a href="aboutus.html">Over Ons</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="cart"><a href="winkelwagen.html"><img src='IMG/shoppingcart.png' alt='winkelwagen'/></a></li>
+                    <label for="check" class="close-menu"><i class="fas fa-times"></i></label>
+                </span>
+                <label for="check" class="open-menu"><i class="fas fa-bars"></i></label>
+            </ul>
+        </nav>
+    </header>
+    <section class="contact-section">
+        <h1>Contact Us</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.</p>
+        <form class="contact-form" action="#" method="POST"></form>
+            <div class="form-group">
+                <label for="name">Naam:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Bericht:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Verzend</button>
+        </form>
+    </section>
+</body>
+</html>

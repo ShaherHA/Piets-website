@@ -1,0 +1,95 @@
+header {
+    background-color: #333;
+    height: 70px; /* Geef de header een vaste hoogte */
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    height: 100%; /* De UL moet de volledige hoogte van de header gebruiken */
+    position: relative;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    height: 100%; /* De LI moet ook de volledige hoogte gebruiken */
+    position: relative;
+}
+
+li.float-right {
+    margin-left: auto;
+}
+
+li a, .dropbtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; /* De A moet de volledige hoogte gebruiken */
+    padding: 0 16px; /* Pas de padding aan zodat het goed uitlijnt */
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #111; /* Zorg ervoor dat de hover-achtergrond de volledige hoogte bedekt */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 70px; /* Zorg dat de dropdown onder de header komt */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Toon het tweede niveau dropdown bij hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-item {
+    position: relative;
+}
+
+.dropdown-item:hover .submenu-content {
+    display: block; /* Toon het submenu bij hover op een tweede-niveau link */
+}
+
+/* Submenu styling (3e niveau) */
+.submenu-content {
+    display: none;
+    position: absolute;
+    left: 100%; /* Plaats submenu rechts van het tweede niveau */
+    top: 0;
+    min-width: 160px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.submenu-content a:hover {
+    background-color: #ddd;
+}
+
+img {
+    height: 50px;
+}
