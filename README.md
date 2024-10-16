@@ -1,9 +1,7 @@
 # Welkom bij Piets Fiets
 ## De beste fietsen winkel van Nederland
 
----
-
-Simpele webshop met allen HTML en CSS
+Simpele webshop met alleen HTML en CSS
 
 Pagina's
 - Home
@@ -13,4 +11,4 @@ Pagina's
 - Winkelwagen (WIP)
 - Checkout (WIP)
 
-De website heeft een responsive navbar die in een burger menu wordt wanneer scherm te smal is.
+De website heeft een responsive navbar die verandert in een burger menu wanneer het scherm te smal is.

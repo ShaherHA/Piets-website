@@ -210,7 +210,7 @@ body {
 /* Sectie titel styling */
 .title {
     text-align: center;
-    margin: 50px 0 20px 0;
+    margin: 10px 0 10px 0;
     font-size: 2.5rem;
 }
 
@@ -229,7 +229,7 @@ body {
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
-    width: 300px;
+    width: 300px; /* Breedte van de kaart */
     text-align: center;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
@@ -376,3 +376,221 @@ body {
     height: auto; /* Zorgt ervoor dat de afbeelding proportioneel blijft */
     margin-top: 20px; /* Ruimte boven de afbeelding */
 }
+/* Product pagina layout */
+.product-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 30px auto;
+    max-width: 1200px;
+}
+
+.product-image {
+    width: 50%;
+    border: 2px solid #ddd; /* Outline rond de afbeelding */
+    border-radius: 10px;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+}
+
+.product-details {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 20px;
+}
+
+.product-info {
+    flex-grow: 1; /* Zorgt ervoor dat dit gedeelte groeit en ruimte inneemt */
+    margin-bottom: 20px; /* Zorg voor een afstand tussen beschrijving en aankoopsectie */
+}
+
+.product-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.product-purchase {
+    margin-top: auto; /* Plaatst de prijs en knop helemaal onderaan de kolom */
+}
+
+.product-price {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #05899b;
+    margin-bottom: 20px;
+}
+
+.product-details .btn {
+    background-color: #05899b;
+    color: white;
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.voorraad {
+    color: green;
+}
+
+.product-details .btn:hover {
+    background-color: #076673;
+}
+
+@media (max-width: 900px) {
+    .product-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .product-image,
+    .product-details {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    .product-purchase {
+        align-items: center; /* Zorgt ervoor dat de prijs en knop gecentreerd zijn op kleinere schermen */
+    }
+}
+
+/* aanbod */
+/* Main content styling */
+main {
+    text-align: center;
+    margin: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* Content layout */
+.content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Filter sectie aan de linkerkant */
+.container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Voeg ruimte toe tussen filter en productlijst */
+}
+
+.filter-section {
+    width: 20%; /* Breedte blijft 20% */
+    height: 25%;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: left;
+}
+
+
+.filter-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+.filter-item {
+    margin-bottom: 30px;
+}
+
+.filter-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Zorgt dat prijs filter ook links is uitgelijnd */
+.price-filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.price-filter input {
+    width: 40%;
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.price-filter span {
+    margin: 0 10px;
+}
+
+.type-filter label,
+.color-filter label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    text-align: left; /* Links uitlijnen van type en kleur filters */
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Placeholder for product list */
+.product-list {
+    width: 75%; /* Verlaag breedte om ruimte te geven aan filter */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.flex-container {
+    display: flex; /* Flexbox inschakelen */
+    gap: 20px; /* Ruimte tussen de filtersectie en productcards */
+}
+
+.filter-section {
+    flex: 0 0 20%; /* Stel de breedte in op 20% */
+    padding: 20px; /* Voeg padding toe voor ruimte rondom */
+}
+
+.product-cards {
+    flex: 1; /* Laat de productcards de rest van de ruimte innemen */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Ruimte tussen de kaarten */
+}
+
+
+@media (max-width: 900px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .filter-section,
+    .product-list {
+        width: 100%;
+    }
+
+    .product-list {
+        margin-top: 20px;
+    }
+}
+
