@@ -219,7 +219,6 @@ body {
     display: flex;
     justify-content: center;
     gap: 20px;
-    padding: 20px;
     flex-wrap: wrap;
 }
 
@@ -275,7 +274,7 @@ body {
 /* Contact pagina css */
 
 .contact-section {
-    margin-top: 20px; /* Zorgt dat de content niet onder de navbar valt */
+    margin-top: 10px; /* Zorgt dat de content niet onder de navbar valt */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -289,20 +288,17 @@ body {
 
 .contact-section p {
     max-width: 600px;
-    margin: 0 auto;
     font-size: 1.2rem;
     color: #555;
 }
 
 /* Contact formulier styling */
-/* Contact formulier styling */
 .contact-form {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center the form horizontally */
-    margin: 20px auto; /* Margin auto ensures form is centered */
+    margin: 20px; 
     width: 100%;
-    max-width: 400px; /* Control the maximum width of the form */
 }
 
 .form-group {
@@ -312,7 +308,6 @@ body {
 
 .form-group label {
     display: block;
-    font-size: 1rem;
     margin-bottom: 5px;
     color: #333;
     text-align: left; /* Left-align the label */
@@ -345,6 +340,7 @@ body {
     transition: background-color 0.3s ease;
     width: 500px; /* Make the submit button fill the width */
     margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 
@@ -441,7 +437,7 @@ body {
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
-.voorraad {
+.stock-status {
     color: green;
 }
 
@@ -471,44 +467,34 @@ body {
 
 .kop {
     text-align: center;
-    align-items: center;
 }
 /* Content layout */
 .content {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 /* Filter sectie aan de linkerkant */
-.container {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px; /* Voeg ruimte toe tussen filter en productlijst */
-}
-
 .filter-section {
-    width: 20%; /* Breedte blijft 20% */
-    height: 25%;
+    height: 23%;
     padding: 20px;
+    margin: 10px;
     background-color: #f4f4f4;
     border: 1px solid #ddd;
     border-radius: 10px;
     text-align: left;
+    flex: 0 0 20%; /* Stel de breedte in op 20% */
 }
-
-
 .filter-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .filter-item {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .filter-item h3 {
-    font-size: 1.2rem;
     margin-bottom: 10px;
 }
 
@@ -520,7 +506,7 @@ body {
 }
 
 .price-filter input {
-    width: 40%;
+    width: 100%;
     padding: 8px;
     font-size: 1rem;
     border: 1px solid #ddd;
@@ -534,36 +520,12 @@ body {
 .type-filter label,
 .color-filter label {
     display: block;
-    font-size: 1rem;
     margin-bottom: 8px;
     text-align: left; /* Links uitlijnen van type en kleur filters */
 }
 
-input[type="radio"] {
-    margin-right: 10px;
-}
-
-.product-list {
-    width: 75%; /* Verlaag breedte om ruimte te geven aan filter */
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
 .flex-container {
     display: flex; /* Flexbox inschakelen */
-    gap: 20px; /* Ruimte tussen de filtersectie en productcards */
-}
-
-.filter-section {
-    flex: 0 0 20%; /* Stel de breedte in op 20% */
-    padding: 20px; /* Voeg padding toe voor ruimte rondom */
-}
-
-.product-cards {
-    flex: 1; /* Laat de productcards de rest van de ruimte innemen */
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Ruimte tussen de kaarten */
 }
 
 
@@ -580,6 +542,9 @@ input[type="radio"] {
 
     .product-list {
         margin-top: 20px;
+    }
+    .flex-container {
+        display: block;
     }
 }
 
