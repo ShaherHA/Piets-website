@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: "Poppins", sans-serif;
+    font-family: sans-serif;
     --color1: #FFF;
     --color2: #181818;
 }
@@ -46,7 +46,7 @@ body {
     text-decoration: none;
     color: var(--color1);
     text-align: center;
-    padding: 10px 0;
+    padding: 20px 0;
 }
 
 .open-menu, .close-menu {
@@ -72,38 +72,9 @@ body {
     display: none;
 }
 
-@media(max-width: 700px) {
-    .menu {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 80%;
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        right: -100%;
-        z-index: 100;
-        background-color: var(--color2);
-    }
 
-    .menu li {
-        margin-top: 30px;
-    }
 
-    .menu li a {
-        padding: 10px;
-    }
-
-    .open-menu, .close-menu {
-        display: block;
-    }
-
-    #check:checked ~ .menu {
-        right: 0;
-    }
-}
-
-/* Dropdown styling */
+/* Dropdown gedeelte */
 .dropdown {
     position: relative;
 }
@@ -111,24 +82,24 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #333; /* Maak de achtergrond donkerder */
+    background-color: #333; 
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
     top: 60px;
-    padding: 10px 0; /* Extra padding zodat de gebruiker meer ruimte heeft */
+    padding: 10px 0; 
 }
 
 .dropdown-content a {
-    color: white; /* Maak de tekst wit voor betere zichtbaarheid */
+    color: white; 
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
 }
 
+/* lichte hover achtergrond bij knopjes */
 .dropdown-content a:hover {
-    background-color: #575757; /* Voeg een lichte hover-achtergrond toe */
+    background-color: #575757; 
 }
 
 /* Toon het tweede niveau dropdown bij hover */
@@ -148,27 +119,50 @@ body {
 .submenu-content {
     display: none;
     position: absolute;
-    left: 100%; /* Plaats submenu rechts van het tweede niveau */
+    left: 100%; /* Plaats submenu !rechts! van het tweede niveau */
     top: 0;
     min-width: 160px;
-    background-color: #333; /* Zelfde achtergrondkleur als het tweede niveau */
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    background-color: #333; 
     z-index: 1;
 }
 
-.submenu-content a {
-    color: white; /* Maak de tekst wit voor de submenu's */
-}
+/* Media query voor burger menu */
+@media(max-width: 700px) {
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        right: -100%;
+        z-index: 100;
+        background-color: var(--color2);
+        transition: right 0.3s ease;
+    }
 
-.submenu-content a:hover {
-    background-color: #575757; /* Voeg ook hier een lichte hover-achtergrond toe */
+    .menu li {
+        margin-top: 30px;
+    }
+
+    .open-menu, .close-menu {
+        display: block;
+    }
+    /* Dit is de logica, dus wanneer de checkbox gechecked is wordt de menu zichtbaar */
+    #check:checked ~ .menu {
+        right: 0;
+    }
+    .submenu-content {
+        left: -100%;
+    }
 }
 
 /* Einde navbar css */
+
 /* Cover sectie styling */
 .cover {
     position: relative;
-    height: 100vh;
 }
 
 .cover-img {
@@ -187,7 +181,7 @@ body {
 }
 
 .cover h1 {
-    font-size: 4rem;
+    font-size: 3em;
     margin-bottom: 20px;
 }
 
@@ -198,7 +192,7 @@ body {
     padding: 15px 15px;
     font-size: 1.2rem;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease; /* rustig kleur veranderen */
 }
 
 .btn:hover {
@@ -210,12 +204,11 @@ body {
 /* Sectie titel styling */
 .title {
     text-align: center;
-    margin: 10px 0 10px 0;
-    font-size: 2.5rem;
+    margin: 10px 0;
+    font-size: 2.5em;
 }
 
-/* Product cards layout */
-.product-cards {
+.index-product-cards {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -230,7 +223,6 @@ body {
     padding: 20px;
     width: 300px; /* Breedte van de kaart */
     text-align: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .card img {
@@ -241,7 +233,7 @@ body {
 
 .card h2 {
     margin: 15px 0;
-    font-size: 1.5rem;
+    font-size: 1.5em;
 }
 
 /* Footer van de card met prijs en koopknop */
@@ -252,11 +244,11 @@ body {
 }
 
 .price {
-    font-size: 1.2rem;
+    font-size: 1.2em;
     font-weight: bold;
 }
 
-/* Koop knop styling */
+/* Koop knop styling bij cards */
 .card-footer .btn {
     background-color: #05899b;
     color: white;
@@ -273,64 +265,52 @@ body {
 
 /* Contact pagina css */
 
-.contact-section {
-    margin-top: 10px; /* Zorgt dat de content niet onder de navbar valt */
+/* Contact Form Page Layout */
+.contact-page {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    text-align: center;
+    padding: 20px;
 }
 
-.contact-section h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    width: 100%;
+    gap: 20px;
 }
 
-.contact-section p {
-    max-width: 600px;
-    font-size: 1.2rem;
-    color: #555;
+.form-column, .text-column {
+    width: 50%;
 }
 
-/* Contact formulier styling */
+/* Contact Form gedeelte */
 .contact-form {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the form horizontally */
-    margin: 20px; 
-    width: 100%;
 }
 
 .form-group {
-    width: 500px;
     margin-bottom: 15px;
 }
 
 .form-group label {
-    display: block;
     margin-bottom: 5px;
-    color: #333;
-    text-align: left; /* Left-align the label */
+    display: block;
 }
 
-.form-group input,
+.form-group input, 
 .form-group textarea {
-    width: 100%; /* Ensure the input and textarea fields take up 100% of the form-group's width */
+    width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-size: 1rem;
-    box-sizing: border-box; /* Prevent padding from increasing the width */
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    border-color: #05899b;
-    outline: none;
 }
 
 .submit-btn {
-    padding: 12px 20px;
+    padding: 12px;
     background-color: #05899b;
     color: white;
     border: none;
@@ -338,16 +318,29 @@ body {
     font-size: 1.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 500px; /* Make the submit button fill the width */
-    margin-top: 10px;
-    margin-bottom: 10px;
 }
-
-
 
 .submit-btn:hover {
     background-color: #076673;
 }
+
+/* Media Query die de order verandert, dus eerst contact informatie, daarna form*/
+@media (max-width: 900px) {
+    .contact-container {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .form-column, .text-column {
+        width: 100%;
+    }
+
+    .text-column {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
 
 /* Over ons pagina */
 
@@ -363,7 +356,7 @@ body {
 .mission-section,
 .what-we-do-section,
 .team-section {
-    max-width: 800px; /* Zorg ervoor dat de secties niet te breed zijn */
+    max-width: 800px; /* Zorgt ervoor dat de secties niet te breed zijn */
     margin-bottom: 40px; /* Ruimte tussen de secties */
 }
 
@@ -406,7 +399,7 @@ body {
 }
 
 .product-title {
-    font-size: 2.5rem;
+    font-size: 2.5em;
     color: #333;
     margin-bottom: 10px;
 }
@@ -422,7 +415,7 @@ body {
 }
 
 .product-price {
-    font-size: 2rem;
+    font-size: 2em;
     font-weight: bold;
     color: #05899b;
     margin-bottom: 20px;
@@ -435,7 +428,7 @@ body {
     font-size: 1.2rem;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.5s ease;
 }
 .stock-status {
     color: green;
@@ -445,6 +438,7 @@ body {
     background-color: #076673;
 }
 
+/* Foto bovenaan */
 @media (max-width: 900px) {
     .product-container {
         flex-direction: column;
@@ -458,7 +452,7 @@ body {
     }
 
     .product-purchase {
-        align-items: center; /* Zorgt ervoor dat de prijs en knop gecentreerd zijn op kleinere schermen */
+        align-items: center; /* Center prijs en koop knop */
     }
 }
 
@@ -469,6 +463,11 @@ body {
     text-align: center;
 }
 /* Content layout */
+
+.flex-container {
+    display: flex; 
+}
+
 .content {
     display: flex;
     justify-content: space-between;
@@ -479,7 +478,7 @@ body {
 .filter-section {
     height: 23%;
     padding: 20px;
-    margin: 10px;
+    margin: 0 20px; /* hoeveel spatie tussen filter sectie en product kaarten */
     background-color: #f4f4f4;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -498,7 +497,7 @@ body {
     margin-bottom: 10px;
 }
 
-/* Zorgt dat prijs filter ook links is uitgelijnd */
+/* prijs filter input naast elkaar */
 .price-filter {
     display: flex;
     align-items: center;
@@ -508,7 +507,7 @@ body {
 .price-filter input {
     width: 100%;
     padding: 8px;
-    font-size: 1rem;
+    font-size: 1em;
     border: 1px solid #ddd;
     border-radius: 5px;
 }
@@ -521,15 +520,22 @@ body {
 .color-filter label {
     display: block;
     margin-bottom: 8px;
-    text-align: left; /* Links uitlijnen van type en kleur filters */
+    text-align: left; 
 }
 
-.flex-container {
-    display: flex; /* Flexbox inschakelen */
+/* Product cards layout */
+.product-cards {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
 }
 
-
+/* filter boven, product cards onder */
 @media (max-width: 900px) {
+    .product-cards {
+        justify-content: center;
+    }
     .content {
         flex-direction: column;
         align-items: center;
@@ -538,13 +544,23 @@ body {
     .filter-section,
     .product-list {
         width: 100%;
+        margin: 0;
     }
 
-    .product-list {
+    .aanbod {
         margin-top: 20px;
     }
     .flex-container {
         display: block;
     }
+}
+
+/* winkelwagen */
+
+.wip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
